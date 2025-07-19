@@ -6,8 +6,11 @@ jobs:
      steps:
         - name: Checkout code
           uses: actions/checkout@v3
- 
         - name: Run Docker Build
           run: docker build -t pythonimage .
         - name: List Docker image
           run: docker image
+        - name: Log in to Docker GitHub
+          run: echo "${{ secrets.PASSWORD }}" | docker login -u ${{ secrets.USERNAME }} --password-stdin
+        - name: Push Docker image
+          run: docker push nanthisht25/devops-workshop

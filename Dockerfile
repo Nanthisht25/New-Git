@@ -1,5 +1,4 @@
 FROM python:3.11
-WORKDIR /app
-COPY . .
+COPY main.py
 EXPOSE 5000
 CMD ["python","main.py"]

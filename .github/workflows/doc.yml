@@ -9,3 +9,5 @@ jobs:
  
         - name: Run Docker Build
           run: docker build -t pythonimage .
+        - name: List Docker image
+          run: docker image

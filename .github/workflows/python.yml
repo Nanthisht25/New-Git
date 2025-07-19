@@ -1,0 +1,14 @@
+name: Python Workflow
+on: [push]
+jobs:
+  run-Python:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout code
+        uses: Actions/checkout@v3
+      - name: Set up Python
+        uses: action/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Run Python Script
+        run: Pyhon main.py
